@@ -1,0 +1,239 @@
+// desktop - basement - tv - dell
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"aphrodite",
+  "name":"aphrodite",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"e6a6f1d4-94dd-82db-ecd8-f3f4ea9ef738",
+  "type":0,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// desktop - Nicholas's
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"ares",
+  "name":"ares",
+  "enabled":false,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"7DF8B4C3-18F6-4AE6-82E4-AED6633449DB",
+  "type":0,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - argus - Joel's
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "name":"argus",
+  "id":"argus",
+  "enabled":false,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":1,
+  "sessionId":"8EF95BF1-8A45-4A9B-8B53-AD0AF0384B28",
+  "type":2,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - nicholas's desk
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"chimera",
+  "name":"chimera",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"BEF22D31-A2F5-49DD-9BCB-320A0F90FA39",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - daniel's desk
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"chronos",
+  "name":"chronos",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"e6a6f1d4-94dd-82db-ecd8-f3f4ea9ef738",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - woodchuck - virtual - joel's desk
+// p({
+//   "class":"foam.core.medusa.ClusterConfig",
+//   "id":"coeus",
+//   "name":"coeus",
+//   "enabled":false,
+//   "realm":"hughes",
+//   "region":"Hamilton",
+//   "regionStatus":1,
+//   "zone":1,
+//   "sessionId":"87FA98B5-F111-43DE-8B1C-C12420892BEA",
+//   "type":4,
+//   "created":"2020-03-28T14:57:12.959Z",
+//   "createdBy":2
+// })
+
+// thinkpad - joel's desk
+// p({
+//   "class":"foam.core.medusa.ClusterConfig",
+//   "id":"cyclops",
+//   "name":"cyclops",
+//   "enabled":false,
+//   "realm":"hughes",
+//   "region":"Hamilton",
+//   "regionStatus":1,
+//   "zone":0,
+//   "sessionId":"e6a6f1d4-94dd-82db-ecd8-f3f4ea9ef738",
+//   "type":1,
+//   "created":"2020-03-28T14:57:12.959Z",
+//   "createdBy":2
+// })
+
+// macbook - daniel/nicholas - school
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"hera",
+  "name":"hera",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"e6a6f1d4-94dd-82db-ecd8-f3f4ea9ef738",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// virtualbox on helios (Joel's desk)
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"iris",
+  "name":"iris",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"7DF8B4C3-18F6-4AE6-82E4-AED6633449DB",
+  "type":0,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// desktop - file server - basement
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"moosehead",
+  "name":"moosehead",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"84747D11-9362-4C57-B699-7CB8643BE2C8",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// desktop - daniel's
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"morteus",
+  "name":"morteus",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"51BE3D32-633C-4626-BD00-D3C122E2D370",
+  "type":0,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - daniel's desk
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"morpheus",
+  "name":"morpheus",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"87FA98B5-F111-43DE-8B1C-C12420892BEA",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// macbook - joel's desk - failing
+// p({
+//   "class":"foam.core.medusa.ClusterConfig",
+//   "id":"prometheus",
+//   "name":"prometheus",
+//   "enabled":false,
+//   "realm":"hughes",
+//   "region":"Hamilton",
+//   "regionStatus":1,
+//   "zone":0,
+//   "sessionId":"3FBF7893-ADDC-4F48-A529-54E6E47B34D5",
+//   "type":1,
+//   "created":"2020-03-28T14:57:12.959Z",
+//   "createdBy":2
+// })
+
+// macbook - Nicholas' desk
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"namtar",
+  "name":"namtar",
+  "enabled":true,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"033d3e2d-ac8e-404c-9de6-94dc92807032",
+  "type":1,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})
+
+// desktop - connor's desk
+p({
+  "class":"foam.core.medusa.ClusterConfig",
+  "id":"rickerus",
+  "name":"rickerus",
+  "enabled":false,
+  "realm":"hughes",
+  "region":"Hamilton",
+  "regionStatus":1,
+  "zone":0,
+  "sessionId":"033d3e2d-ac8e-404c-9de6-94dc92807032",
+  "type":0,
+  "created":"2020-03-28T14:57:12.959Z",
+  "createdBy":2
+})

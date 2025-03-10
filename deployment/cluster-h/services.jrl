@@ -1,0 +1,11 @@
+p({
+  "class":"foam.core.boot.CSpec",
+  "name":"appConfig",
+  "lazy":false,
+  "parameters":false,
+  "service": {
+    "class":"foam.core.app.AppConfig",
+    "mode":0
+  }
+})
+
