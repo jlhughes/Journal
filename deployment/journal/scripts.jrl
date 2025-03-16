@@ -1,0 +1,25 @@
+p({
+  class:"foam.core.script.Script",
+  id:"EventMigrateWhyToComments",
+  code:"""
+import hughes.journal.Comment;
+import hughes.journal.Event;
+import foam.util.SafetyUtil;
+
+d = x.get("eventDAO");
+a = d.select().array;
+for ( e : a ) {
+  if ( ! SafetyUtil.isEmpty(e.getWhy()) ) {
+    e = e.fclone();
+    c = new Comment();
+    c.setDate(e.getCreated());
+    c.setComment(e.getWhy());
+    e.setComments(new Comment[] { c } );
+    d.put(e);
+    print("migrated: "+e.getId());
+  }
+}
+print("done");
+""",
+  lastModified:1742095585128
+})

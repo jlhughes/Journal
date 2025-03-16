@@ -187,14 +187,92 @@ categories
      `
     },
     {
+      name: 'followUpAuto',
+      label: 'Follow Up',
+      class: 'Boolean',
+      postSet: function(old, nu) {
+        if ( ! old && nu &&
+             ! this.followUpAutoSchedule ) {
+          this.followUpAutoSchedule = hughes.journal.FollowUpSchedule.create();
+        }
+      },
+      readVisibility: function(followUpAuto) {
+        if ( followUpAuto ) {
+          return foam.u2.DisplayMode.RO;
+        }
+        return foam.u2.DisplayMode.HIDDEN;
+      },
+      order: 8,
+      gridColumns: 2
+    },
+    {
+      name: 'followUpAutoSchedule',
+      class: 'FObjectProperty',
+      of: 'hughes.journal.FollowUpSchedule',
+      label: '',
+      visibility: function(followUpAuto) {
+        if ( followUpAuto ) {
+          if ( this.controllerMode == foam.u2.ControllerMode.EDIT )
+            return foam.u2.DisplayMode.RW;
+          return foam.u2.DisplayMode.RO;
+        }
+        return foam.u2.DisplayMode.HIDDEN;
+      },
+      order: 9,
+      gridColumns: 4
+    },
+    {
+      documentation: 'deprecated',
       name: 'why',
+      label: 'Why / Note',
       class: 'String',
+      transient: true,
+      visibility: 'HIDDEN',
+      // javaSetter: `
+      // var comment = new Comment();
+      // comment.setComment(val);
+      // comment.setDate(getCreated());
+      // if ( getComments().length == 0 ) {
+      //   setComments(new Comment[] {comment});
+      // } else {
+      //   Comment[] comments = new Comment[getComments().length +1];
+      //   comments[0] = comment;
+      //   int index = 1;
+      //   Comment[] existing = (Comment[]) getComments();
+      //   for ( Comment c : existing ) {
+      //     comments[index] = existing[index-1];
+      //     index += 1;
+      //   }
+      //   setComments(comments);
+      // }
+      // `,
       view: {
         class: 'foam.u2.tag.TextArea',
         rows: 5, cols: 60,
       },
-      order: 8,
+      order: 10,
       gridColumns: 6
+    },
+    {
+      name: 'comments',
+      label: 'Why / Notes / Comments',
+      class: 'FObjectArray',
+      of: 'hughes.journal.Comment',
+      createVisibility: 'RW',
+      updateVisibility: function(status) {
+        if ( status == this.Status.OPEN ) {
+          return foam.u2.DisplayMode.RW;
+        }
+        return foam.u2.DisplayMode.RO;
+      },
+      readVisibility: function(comments) {
+        if ( comments && comments.length > 0 ) {
+          return foam.u2.DisplayMode.RO;
+        }
+        return foam.u2.DisplayMode.HIDDEN;
+      },
+      order: 10,
+      gridColumns: 12
     },
     {
       name: 'transactions',
@@ -214,37 +292,8 @@ categories
         }
         return foam.u2.DisplayMode.HIDDEN;
       },
-      order: 9,
-      gridColumns: 6
-    },
-    {
-      name: 'followUpAuto',
-      label: 'Follow Up',
-      class: 'Boolean',
-      order: 10,
-      gridColumns: 2,
-      postSet: function(old, nu) {
-        if ( ! old && nu &&
-             ! this.followUpAutoSchedule ) {
-          this.followUpAutoSchedule = hughes.journal.FollowUpSchedule.create();
-        }
-      }
-    },
-    {
-      name: 'followUpAutoSchedule',
-      class: 'FObjectProperty',
-      of: 'hughes.journal.FollowUpSchedule',
-      label: '',
-      order: 11,
-      gridColumns: 4,
-      visibility: function(followUpAuto) {
-        if ( followUpAuto ) {
-          if ( this.controllerMode == foam.u2.ControllerMode.EDIT )
-            return foam.u2.DisplayMode.RW;
-          return foam.u2.DisplayMode.RO;
-        }
-        return foam.u2.DisplayMode.HIDDEN;
-      }
+      order: 12,
+      gridColumns: 12
     },
     {
       class: 'foam.core.fs.FileArray',

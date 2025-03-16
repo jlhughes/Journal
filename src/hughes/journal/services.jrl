@@ -122,3 +122,23 @@ p({
     }
   """
 })
+p({
+  "class":"foam.core.boot.CSpec",
+  "name":"commentDAO",
+  "serve":true,
+  "authenticate": false,
+  "serviceScript":"""
+    return new foam.dao.EasyDAO.Builder(x)
+      .setOf(hughes.journal.Comment.getOwnClassInfo())
+      .setFuid(true)
+      .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
+      .setJournalName("comments")
+      .build()
+      .orderBy(foam.mlang.MLang.DESC(hughes.journal.Comment.CREATED));
+  """,
+  "client":"""
+    {
+      "of":"hughes.journal.Comment"
+    }
+  """
+})

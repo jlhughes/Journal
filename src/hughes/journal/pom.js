@@ -7,6 +7,8 @@ foam.POM({
       flags: 'js|java' },
     { name: 'CalendarSchedule',
       flags: 'js|java' },
+    { name: 'Comment',
+      flags: 'js|java' },
     { name: 'Event',
       flags: 'js|java' },
     { name: 'EventCategory',
