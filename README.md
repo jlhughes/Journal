@@ -40,7 +40,7 @@ With this deployment style you can edit models (mostly) and then hard refresh th
 
 From the root of the `Journal` repository:
 
-`./deployment/demo/run-u.sh -c`
+`./deployment/demo/run-https.sh -c`
 
 The website will be available at 
 
