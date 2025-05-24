@@ -1,3 +1,3 @@
 #!/bin/bash
-./build.sh -ckJjournal,hughes,../foam3/deployment/https -Njournal_hughes "$@"
-foam3/tools/bin/install_remote.sh -Njournal_hughes -W8100 -Hmoosehead
+./build.sh -ckJjournal,huhges,https -Njournal_huhges "$@"
+./build.sh -TStandard,RemoteInstall,Java --backup:false --remote-hostname:moosehead --app-name:journal_huhges --web-port:8100

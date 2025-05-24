@@ -1,2 +1,2 @@
 #!/bin/bash
-./build.sh -Jjournal,demo -aJ../foam3/deployment/https -Njournal_demo -W8100 -d "$@"
+./build.sh -Jjournal,demo -aJhttps -Njournal_demo -W8100 -d "$@"
