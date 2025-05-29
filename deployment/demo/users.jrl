@@ -47,3 +47,19 @@ p({
   "loginEnabled":true,
   "password":"KXhxt4A92FU=:cBZUzMFSstyVdwVbIL1r6ZTFKLVz3DYZw/apfnrUmInWuenVoGrpYCFQu4ms1sNZblsR1v/AUgDZAV5/JS0Enw=="
 })
+p({
+  "class":"foam.core.auth.User",
+  "id":42,
+  "spid":"foam",
+  "lifecycleState":1,
+  "group":"system",
+  "firstName":"admin",
+  "middleName":"",
+  "lastName":"admin",
+  "email":"admin@journal.hughes",
+  "userName":"admin",
+  "birthday":"1982-07-07T23:12:00.0Z",
+  "password":"VA2ma08f/58=:qZpTVbU00cdbHOaO9uf0G3iQQYuJBhIzJy32VOsJXt2ExZadCsQg5bMGUGpB2U6yhFAfETbWUOFrsROM3+Bj8w==",
+  "emailVerified":true,
+  "loginEnabled":true
+})
