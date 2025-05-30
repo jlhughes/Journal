@@ -24,6 +24,7 @@ foam.CLASS({
   tableColumns: [
     'firstName',
     'lastName',
+    'businessName',
     'email',
     'phoneNumber',
     'mobileNumber',
@@ -31,6 +32,7 @@ foam.CLASS({
   ],
 
   searchColumns: [
+    'businessName',
     'email',
     'firstName',
     'lastName',
