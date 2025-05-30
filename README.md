@@ -9,6 +9,12 @@ A collection of *Event*s
 * Attachments
 * Parent/Child relationship - furnace purchase can have maintenance events
 
+## Other Useful Associated Entities
+* Accounts (Bank Accounts)
+* Assets
+* Contacts
+* Passwords
+
 ## Installing
 
 1. `git clone git@github.com:jlhughes/Journal.git`
@@ -61,8 +67,9 @@ password: `demopassword`
 ## Use
 - Events - track ToDos, appointments, ... 
 - Assets - track physical items, can be associated with Events
-- Passwword - manage passwords
 - Accounts - manage Cash or Credit Accounts and see balance modified by Ledger entries on Events.
+- Contacts - 
+- Passwword - manage passwords
 
 ## Other 
 Ledger entries on Events create double entry accounting Transactions which modify the balance of the two accounts involved. 
