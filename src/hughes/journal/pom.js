@@ -9,6 +9,8 @@ foam.POM({
       flags: 'js|java' },
     { name: 'Comment',
       flags: 'js|java' },
+    { name: 'Contact',
+      flags: 'js|java' },
     { name: 'Event',
       flags: 'js|java' },
     { name: 'EventCategory',

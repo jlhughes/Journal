@@ -142,3 +142,23 @@ p({
     }
   """
 })
+p({
+  "class":"foam.core.boot.CSpec",
+  "name":"contactDAO",
+  "serve":true,
+  "authenticate": false,
+  "serviceScript":"""
+    return new foam.dao.EasyDAO.Builder(x)
+      .setOf(hughes.journal.Contact.getOwnClassInfo())
+      .setSeqNo(true)
+      .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
+      .setJournalName("contacts")
+      .build();
+  """,
+  "client":"""
+    {
+      "of":"hughes.journal.Contact",
+      "decorators": [{"class":"foam.core.fs.FileDAODecorator"}]
+    }
+  """
+})
