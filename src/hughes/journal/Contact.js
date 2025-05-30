@@ -108,7 +108,7 @@ foam.CLASS({
       gridColumns: 4
     },
     {
-      __copyFrom__: 'foam.core.auth.User.JOB_TITLE',
+      __copyFrom__: 'foam.core.auth.User.WEBSITE',
       gridColumns: 4
     },
     {
