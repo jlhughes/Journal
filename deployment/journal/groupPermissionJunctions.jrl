@@ -60,3 +60,11 @@ p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"p
 
 // p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.journalAdmin"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.hughes.crunch.personalsettings"})
+
+
+// Contact
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.contactDAO"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.contact"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.create"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.read.*"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.update.*"})
