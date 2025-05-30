@@ -22,8 +22,7 @@ foam.CLASS({
   ],
 
   tableColumns: [
-    'firstName',
-    'lastName',
+    'legalName',
     'businessName',
     'email',
     'phoneNumber',
@@ -72,6 +71,7 @@ foam.CLASS({
     },
     {
       __copyFrom__: 'foam.core.auth.User.LEGAL_NAME',
+      columnPermissionRequired: false,
       gridColumns: 6
     },
     {
@@ -80,6 +80,7 @@ foam.CLASS({
     },
     {
       __copyFrom__: 'foam.core.auth.User.MIDDLE_NAME',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
@@ -88,11 +89,13 @@ foam.CLASS({
     },
     {
       __copyFrom__: 'foam.core.auth.User.PHONE_NUMBER',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
       __copyFrom__: 'foam.core.auth.User.MOBILE_NUMBER',
       createVisibility: 'RW',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
@@ -101,14 +104,18 @@ foam.CLASS({
     },
     {
       __copyFrom__: 'foam.core.auth.User.BIRTHDAY',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
       __copyFrom__: 'foam.core.auth.User.BUSINESS_NAME',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
       __copyFrom__: 'foam.core.auth.User.WEBSITE',
+      createVisibility: 'RW',
+      columnPermissionRequired: false,
       gridColumns: 4
     },
     {
