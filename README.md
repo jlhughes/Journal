@@ -21,13 +21,11 @@ A collection of *Event*s
 
 1. `cd Journal`
 
-1. `npm install`
-
 1. `git clone git@github.com:kgrgreer/foam3.git`
 
 1. `cd foam3`
 
-1. `npm install`
+1. `./build.sh --install`
 
 ## Building and Running locally
 ### Build and deploy from live model files
