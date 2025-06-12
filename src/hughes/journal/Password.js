@@ -102,22 +102,27 @@ foam.CLASS({
       gridColumns: 4
     },
     {
+      name: 'recoveryEmail',
+      class: 'EMail',
+      gridColumns: 4
+    },
+    {
+      name: 'recoveryPhoneNumber',
+      class: 'PhoneNumber',
+      gridColumns: 4
+    },
+    {
+      name: 'securityQuestions',
+      class: 'Map',
+      gridColumns: 8
+    },
+    {
       name: 'memo',
       class: 'Code',
       view: {
         class: 'foam.u2.tag.TextArea',
         rows: 4, cols: 60,
       },
-      gridColumns: 6
-    },
-    {
-      name: 'recoveryEmail',
-      class: 'EMail',
-      gridColumns: 6
-    },
-    {
-      name: 'securityQuestions',
-      class: 'Map',
       gridColumns: 6
     },
     {
