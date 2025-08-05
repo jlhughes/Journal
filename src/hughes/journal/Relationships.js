@@ -6,7 +6,8 @@ foam.RELATIONSHIP({
   cardinality: '1:*',
   targetProperty: {
     label: 'Parent',
-    view: { class: 'foam.u2.view.ReferenceView', placeholder: '--' }
+    view: { class: 'foam.u2.view.ReferenceView', placeholder: '--' },
+    order: 20
   }
 });
 
@@ -14,5 +15,8 @@ foam.RELATIONSHIP({
   sourceModel: 'hughes.journal.Asset',
   targetModel: 'hughes.journal.Event',
   forwardName: 'events',
-  inverseName: 'asset'
+  inverseName: 'asset',
+  targetProperty: {
+    order: 21
+  }
 });
