@@ -8,6 +8,9 @@ foam.RELATIONSHIP({
     label: 'Parent',
     view: { class: 'foam.u2.view.ReferenceView', placeholder: '--' },
     order: 20
+  },
+  sourceProperty: {
+    order: 20
   }
 });
 

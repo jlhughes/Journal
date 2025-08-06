@@ -122,6 +122,8 @@ p({
     }
   """
 })
+
+// deprecated
 p({
   "class":"foam.core.boot.CSpec",
   "name":"commentDAO",
@@ -134,7 +136,7 @@ p({
       .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
       .setJournalName("comments")
       .build()
-      .orderBy(foam.mlang.MLang.DESC(hughes.journal.Comment.CREATED));
+      .orderBy(foam.mlang.MLang.DESC(hughes.journal.Comment.DATE));
   """,
   "client":"""
     {

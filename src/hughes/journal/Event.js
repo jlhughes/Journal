@@ -331,7 +331,31 @@ categories
       gridColumns: 12
     },
     {
+      name: 'created',
+      order: 15,
+      gridColumns: 6
+    },
+    {
+      name: 'createdBy',
+      order: 16,
+      gridColumns: 6
+    },
+    {
       name: 'createdByAgent',
+      visibility: 'HIDDEN'
+    },
+    {
+      name: 'lastModified',
+      order: 17,
+      gridColumns: 6
+    },
+    {
+      name: 'lastModifiedBy',
+      order: 18,
+      gridColumns: 6
+    },
+    {
+      name: 'lastModifiedByAgent',
       visibility: 'HIDDEN'
     }
   ],
