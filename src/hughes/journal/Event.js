@@ -271,6 +271,7 @@ categories
         }
         return foam.u2.DisplayMode.HIDDEN;
       },
+      view: { class: 'foam.u2.view.FObjectArrayView' },
       order: 10,
       gridColumns: 12
     },
@@ -292,6 +293,7 @@ categories
         }
         return foam.u2.DisplayMode.HIDDEN;
       },
+      view: { class: 'foam.u2.view.FObjectArrayView' },
       order: 12,
       gridColumns: 12
     },
