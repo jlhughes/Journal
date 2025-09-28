@@ -26,11 +26,13 @@ Transactions rebuild account balance on replay.
 
   imports: [
     'accountDAO',
-    'currencyDAO'
+    'currencyDAO',
+    'eventDAO'
   ],
 
   tableColumns: [
     'id',
+    'event',
     'debitAccount',
     'creditAccount',
     'total',
@@ -61,7 +63,9 @@ Transactions rebuild account balance on replay.
           return foam.u2.DisplayMode.HIDDEN;
         }
         return foam.u2.DisplayMode.RO;
-      }
+      },
+      order: 1,
+      gridColumns: 3
     },
     {
       name: 'debitAccountUser',
@@ -87,6 +91,7 @@ Transactions rebuild account balance on replay.
           this.debitAccount = undefined;
         }
       },
+      order: 3,
       gridColumns: 3
     },
     {
@@ -124,6 +129,7 @@ Transactions rebuild account balance on replay.
           self.add(a.toSummary());
         });
       },
+      order: 4,
       gridColumns: 3
     },
     {
@@ -150,6 +156,7 @@ Transactions rebuild account balance on replay.
           this.creditAccount = undefined;
         }
       },
+      order: 5,
       gridColumns: 3
     },
     {
@@ -188,6 +195,7 @@ Transactions rebuild account balance on replay.
           self.add(a.toSummary());
         });
       },
+      order: 6,
       gridColumns: 3
     },
     {
@@ -229,6 +237,7 @@ Transactions rebuild account balance on replay.
           });
         });
       },
+      order: 7,
       gridColumns: 2,
       unitPropValueToString: async function(x, val) {
         let a = await this.accountDAO.find(this.debitAccount);
@@ -274,6 +283,7 @@ Transactions rebuild account balance on replay.
           });
         });
       },
+      order: 8,
       gridColumns: 2,
       unitPropValueToString: async function(x, val) {
         let a = await this.accountDAO.find(this.debitAccount);
@@ -320,6 +330,7 @@ Transactions rebuild account balance on replay.
           });
         });
       },
+      order: 9,
       gridColumns: 2,
       unitPropValueToString: async function(x, val) {
         let a = await this.accountDAO.find(this.debitAccount);
@@ -358,6 +369,7 @@ Transactions rebuild account balance on replay.
         // NOTE: hidden until can control from parent view
         return foam.u2.DisplayMode.HIDDEN; // RO;
       },
+      order: 10,
       gridColumns: 3
     },
     {
@@ -376,6 +388,7 @@ Transactions rebuild account balance on replay.
         // NOTE: hidden until can control from parent view
         return foam.u2.DisplayMode.HIDDEN; // RO;
       },
+      order: 11,
       gridColumns: 3
     },
     {

@@ -96,3 +96,20 @@ p({
     }
    """
 })
+
+// Just for Reflow use at the moment until it's easier to create dynamic DAOs
+p({
+  "class":"foam.core.boot.CSpec",
+  "name":"ledgerEntryDAO",
+  "serve":true,
+  "serviceScript":`
+    return new foam.dao.EasyDAO.Builder(x)
+      .setOf(hughes.ledger.LedgerEntry.getOwnClassInfo())
+      .build();
+  `,
+  "client":`
+    {
+      "of":"hughes.ledger.LedgerEntry"
+    }
+   `
+})

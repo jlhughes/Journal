@@ -1,0 +1,9 @@
+p({
+  "class":"foam.core.menu.Menu",
+  "id":"ledger.accounts",
+  "label":"Account Ledger",
+  "handler":{
+    class: "foam.core.menu.SessionLinkMenu",
+    link: "/#flow/AccountLedger?flowMode=PRESENTATION"
+  }
+})
