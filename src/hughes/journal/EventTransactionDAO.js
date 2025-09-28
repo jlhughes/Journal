@@ -6,8 +6,9 @@ foam.CLASS({
   documentation: 'Create Transaction from Event',
 
   javaImports: [
-    'foam.dao.DAO',
     'foam.core.cron.Schedule',
+    'foam.dao.ArraySink',
+    'foam.dao.DAO',
     'foam.util.SafetyUtil',
     'hughes.ledger.Transaction',
     'java.util.ArrayList',
@@ -16,10 +17,24 @@ foam.CLASS({
 
   methods: [
     {
+      name: 'find_',
+      javaCode: `
+      Event event = (Event) getDelegate().find_(x, id);
+      if ( event != null ) {
+        List<Transaction> txns = (List) ((ArraySink) event.getTxns(getX()).select(new ArraySink())).getArray();
+        if ( txns != null &&
+             txns.size() > 0 ) {
+          event = (Event) event.fclone();
+          event.setTransactions(txns.toArray(new Transaction[0]));
+        }
+      }
+      return event;
+      `
+    },
+    {
       name: 'put_',
       javaCode: `
-      // Event old = (Event) getDelegate().find_(x, obj);
-      Event event = (Event) obj;
+      Event event = (Event) getDelegate().put_(x, obj);
       Transaction[] txns = event.getTransactions();
       if ( txns != null ) {
         for ( Transaction txn : txns ) {
@@ -30,15 +45,17 @@ foam.CLASS({
           // java.util.Date date = schedule.getNextScheduledTime(x, null);
           // if ( date != null &&
           //      date.getTime() <= System.currentTimeMillis() ) {
-            Transaction nu = (Transaction) ((DAO) x.get("transactionDAO")).put_(x, txn);
+            // Transaction nu = (Transaction) ((DAO) x.get("transactionDAO")).put_(x, txn);
+            Transaction nu = (Transaction) event.getTxns(x).put(txn);
             txn.copyFrom(nu);
           // }
         }
       }
-      return getDelegate().put_(x, event);
+      return event;
       `
     },
     {
+      // TODO:
       name: 'remove_',
       javaCode: `
       Event event = (Event) obj;

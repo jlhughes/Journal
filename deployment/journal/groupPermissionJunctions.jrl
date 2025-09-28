@@ -68,3 +68,17 @@ p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"m
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.create"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.read.*"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.update.*"})
+
+// Flows
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.flowDAO"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"flow.read.*"}) // flow.read.* is very important, as an individual flow requires other flows to work
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.flow"}) // required for menu links to /#flow/FlowName
+
+// LedgerEntry - service exists until it's easier to create dynamic DAOs
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.ledgerEntryDAO"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"ledgerentry.read.*"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"ledgerentry.create"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"ledgerentry.update.*"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"ledgerentry.remove.*"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.ledger.accounts"})
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.ledger.events"})

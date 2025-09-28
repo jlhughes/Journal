@@ -279,6 +279,7 @@ categories
       name: 'transactions',
       class: 'FObjectArray',
       of: 'hughes.ledger.Transaction',
+      storageTransient: true,
       label: 'How Much',
       createVisibility: 'RW',
       updateVisibility: function(status) {

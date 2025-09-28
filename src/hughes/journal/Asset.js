@@ -69,6 +69,17 @@ foam.CLASS({
       gridColumns: 4
     },
     {
+      name: 'purchaseDate',
+      class: 'Date',
+      value: null,
+      gridColumns: 6
+    },
+    {
+      name: 'vendor',
+      class: 'String',
+      gridColumns: 6
+    },
+    {
       name: 'notes',
       class: 'Code',
       view: {
@@ -107,7 +118,7 @@ foam.CLASS({
           }
         };
       },
-      gridColumns: 6,
+      gridColumns: 6
     },
     {
       name: 'createdByAgent',
