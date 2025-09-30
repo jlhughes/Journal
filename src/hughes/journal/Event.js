@@ -462,6 +462,10 @@ categories
       followUp.setFollowUpAuto(getFollowUpAuto());
       return followUp;
       `
+    },
+    {
+      name: 'txns',
+      visibility: 'HIDDEN'
     }
   ],
 

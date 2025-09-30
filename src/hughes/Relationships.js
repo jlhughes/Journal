@@ -5,7 +5,7 @@ foam.RELATIONSHIP({
   inverseName: 'event',
   cardinality: '1:*',
   sourceProperty: {
-    visibility: 'RO'
+    visibility: 'HIDDEN'
   },
   targetProperty: {
     createVisibility: 'HIDDEN',
@@ -15,7 +15,10 @@ foam.RELATIONSHIP({
     tableCellFormatter: function(val, obj) {
       var self = this;
       obj.eventDAO.find(obj.event).then(function(e) {
-        self.add(e.toSummary());
+        if ( e )
+          self.add(e.toSummary());
+        else
+          self.add(obj.event);
       });
     },
     order: 2,
