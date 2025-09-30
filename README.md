@@ -71,3 +71,5 @@ password: `demopassword`
 
 ## Other 
 Ledger entries on Events create double entry accounting Transactions which modify the balance of the two accounts involved. 
+
+Flow provided for generating Ledger. Look for `ledger` action on User or Account, and menu `Account Ledger`. 
