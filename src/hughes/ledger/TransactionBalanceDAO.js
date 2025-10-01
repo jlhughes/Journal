@@ -16,7 +16,11 @@ foam.CLASS({
       name: 'put_',
       synchronized: true,
       javaCode: `
+      Transaction old = (Transaction) getDelegate().find_(x, obj);
       Transaction txn = (Transaction) getDelegate().put_(x, obj);
+      if ( old != null )
+        return txn;
+
       Account debitAccount = (Account) ((DAO) x.get("accountDAO")).find_(x, txn.getDebitAccount());
       if ( debitAccount != null ) {
         debitAccount.updateBalance(getX(), txn.getAmount(), Direction.DEBIT);
