@@ -1,3 +1,3 @@
 #!/bin/bash
 ./build.sh -ckJjournal,hughes,https "$@"
-./build.sh -TStandard,RemoteInstall,Java -Jjournal,hughes,https --backup:false --remote-hostname:moosehead
+./build.sh -TStandard,Java,RemoteInstall -Jjournal,hughes,https --backup:false --remote-hostname:moosehead
