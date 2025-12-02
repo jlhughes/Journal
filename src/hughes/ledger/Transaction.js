@@ -203,9 +203,11 @@ Transactions rebuild account balance on replay.
       class: 'UnitValue',
       unitPropName: 'denomination',
       min: 0,
-      // validation - ! zero,
-      createVisibility: function(debitAccount) {
-        if ( debitAccount ) {
+      // NOTE: Testing against creditAccountUser because when only
+      // one account exists it is populated, but the visibility
+      // not triggered.
+      createVisibility: function(debitAccount, creditAccountUser) {
+        if ( debitAccount || creditAccountUser ) {
           return foam.u2.DisplayMode.RW;
         }
         return foam.u2.DisplayMode.HIDDEN;
