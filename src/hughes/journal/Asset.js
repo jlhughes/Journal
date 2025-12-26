@@ -131,7 +131,10 @@ foam.CLASS({
       name: 'toSummary',
       type: 'String',
       code: function() {
-        return this.name + (this.location ? ' ('+this.location+')' : '');
+        return this.name
+          + (this.make ? ' - '+this.make+'/' : '')
+          + (this.model ? this.model : '')
+          + (this.location ? ' ('+this.location+')' : '');
       }
     },
     {
