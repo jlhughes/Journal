@@ -12,13 +12,15 @@ foam.CLASS({
 `,
 
   javaImports: [
+    'foam.core.notification.Notification',
     'foam.lang.Detachable',
     'foam.lang.X',
     'foam.dao.DAO',
     'foam.dao.Sink',
     'static foam.mlang.MLang.*',
     'foam.mlang.sink.Count',
-    'foam.core.cron.Schedule'
+    'foam.core.cron.Schedule',
+    'foam.util.SafetyUtil'
   ],
 
   methods: [
@@ -40,7 +42,17 @@ foam.CLASS({
           if ( ((Count) children.select(COUNT())).getValue() == 0 ) {
             if ( ((Schedule)event.getFollowUpAutoSchedule()).getNextScheduledTime(x, ((CalendarSchedule)event.getWhen()).getStartDate()).getTime() < System.currentTimeMillis()) {
               Event followUp = event.createFollowUp(x);
-              children.put(followUp);
+              followUp = (Event) children.put(followUp);
+              if ( followUp.getWho() != 0 ) {
+                Notification n = new Notification();
+                n.setUserId(followUp.getWho());
+                n.setToastMessage("Follow-up Event Created");
+                n.setToastSubMessage(followUp.getWhat());
+                if ( ! SafetyUtil.isEmpty(followUp.getWhere()) ) {
+                  n.setToastSubMessage("<a href=\\"#event/"+followUp.getId()+"\\">"+n.getToastSubMessage() + " - " + followUp.getWhere()+"</a>");
+                }
+                ((DAO) x.get("notificationDAO")).put(n);
+              }
             }
           }
         }
