@@ -21,6 +21,8 @@ A collection of *Event*s
 
 1. `cd Journal`
 
+1. `git clone git@github.com:adamvy/foamchat.git`
+
 1. `git clone git@github.com:kgrgreer/foam3.git`
 
 1. `cd foam3`
