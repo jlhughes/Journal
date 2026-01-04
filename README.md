@@ -15,6 +15,9 @@ A collection of *Event*s
 * Contacts
 * Passwords
 
+## Other Features
+* Chat support - from FOAM application [foamchat](https://github.com/adamvy/foamchat).
+
 ## Installing
 
 1. `git clone git@github.com:jlhughes/Journal.git`
