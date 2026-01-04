@@ -8,6 +8,8 @@ foam.POM({
     { name: 'Contact',                              flags: 'js|java' },
     { name: 'Event',                                flags: 'js|java' },
     { name: 'EventCategory',                        flags: 'js|java' },
+    { name: 'EventNotification',                    flags: 'js|java' },
+    { name: 'EventNotificationNotificationCitationView', flags: 'js' },
     { name: 'EventStatusDAO',                       flags: 'js|java' },
     { name: 'EventTransactionDAO',                  flags: 'js|java' },
     { name: 'FollowUpAutoAgent',                    flags: 'js|java' },

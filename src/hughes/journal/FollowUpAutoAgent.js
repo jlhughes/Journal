@@ -44,12 +44,13 @@ foam.CLASS({
               Event followUp = event.createFollowUp(x);
               followUp = (Event) children.put(followUp);
               if ( followUp.getWho() != 0 ) {
-                Notification n = new Notification();
+                EventNotification n = new EventNotification();
+                n.setEvent(followUp.getId());
                 n.setUserId(followUp.getWho());
                 n.setToastMessage("Follow-up Event Created");
                 n.setToastSubMessage(followUp.getWhat());
                 if ( ! SafetyUtil.isEmpty(followUp.getWhere()) ) {
-                  n.setToastSubMessage("<a href=\\"#event/"+followUp.getId()+"\\">"+n.getToastSubMessage() + " - " + followUp.getWhere()+"</a>");
+                  n.setToastSubMessage(n.getToastSubMessage() + " - " + followUp.getWhere());
                 }
                 ((DAO) x.get("notificationDAO")).put(n);
               }
