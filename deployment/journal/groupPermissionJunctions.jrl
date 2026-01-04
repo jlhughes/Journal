@@ -82,3 +82,5 @@ p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"l
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"ledgerentry.remove.*"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.ledger.accounts"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.ledger.events"})
+
+p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"@foamchat"})
