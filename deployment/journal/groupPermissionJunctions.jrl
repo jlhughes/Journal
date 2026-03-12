@@ -36,7 +36,7 @@ p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"s
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.account"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"account.read.*"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"account.create"})
-// TODO: add authorizeOn
+// System manages accounts
 // p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"account.update.*"})
 
 // Balance
@@ -54,20 +54,20 @@ p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"a
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.passwordDAO"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.password"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"password.create"})
-p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"password.read.*"})
-// TODO: add authorizeOn
-p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"password.update.*"})
+// Password - added in foamchat - remove as we override
+r({class:"foam.core.auth.GroupPermissionJunction",sourceId:"foamchat",targetId:"service.passwordDAO"})
+r({class:"foam.core.auth.GroupPermissionJunction",sourceId:"foamchat",targetId:"menu.read.password"})
+r({class:"foam.core.auth.GroupPermissionJunction",sourceId:"foamchat",targetId:"password.create"})
+r({class:"foam.core.auth.GroupPermissionJunction",sourceId:"foamchat",targetId:"password.read.*"})
+r({class:"foam.core.auth.GroupPermissionJunction",sourceId:"foamchat",targetId:"password.update.*"})
 
 // p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.journalAdmin"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.hughes.crunch.personalsettings"})
-
 
 // Contact
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.contactDAO"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"menu.read.contact"})
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.create"})
-p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.read.*"})
-p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"contact.update.*"})
 
 // Flows
 p({class:"foam.core.auth.GroupPermissionJunction",sourceId:"journal",targetId:"service.flowDAO"})

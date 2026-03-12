@@ -3,7 +3,6 @@ p({
   "name":"eventDAO",
   "lazy":false,
   "serve":true,
-  "authenticate": false,
   "serviceScript":"""
     return new foam.dao.EasyDAO.Builder(x)
       .setOf(hughes.journal.Event.getOwnClassInfo())
@@ -51,7 +50,6 @@ p({
   "class":"foam.core.boot.CSpec",
   "name":"passwordDAO",
   "serve":true,
-  "authenticate": false,
   "serviceScript":"""
     return new foam.dao.EasyDAO.Builder(x)
       .setOf(hughes.journal.Password.getOwnClassInfo())
@@ -123,32 +121,31 @@ p({
   """
 })
 
-// deprecated
-p({
-  "class":"foam.core.boot.CSpec",
-  "name":"commentDAO",
-  "serve":true,
-  "authenticate": false,
-  "serviceScript":"""
-    return new foam.dao.EasyDAO.Builder(x)
-      .setOf(hughes.journal.Comment.getOwnClassInfo())
-      .setFuid(true)
-      .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
-      .setJournalName("comments")
-      .build()
-      .orderBy(foam.mlang.MLang.DESC(hughes.journal.Comment.DATE));
-  """,
-  "client":"""
-    {
-      "of":"hughes.journal.Comment"
-    }
-  """
-})
+// // deprecated
+// p({
+//   "class":"foam.core.boot.CSpec",
+//   "name":"commentDAO",
+//   "serve":true,
+//   "authenticate": false,
+//   "serviceScript":"""
+//     return new foam.dao.EasyDAO.Builder(x)
+//       .setOf(hughes.journal.Comment.getOwnClassInfo())
+//       .setFuid(true)
+//       .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
+//       .setJournalName("comments")
+//       .build()
+//       .orderBy(foam.mlang.MLang.DESC(hughes.journal.Comment.DATE));
+//   """,
+//   "client":"""
+//     {
+//       "of":"hughes.journal.Comment"
+//     }
+//   """
+// })
 p({
   "class":"foam.core.boot.CSpec",
   "name":"contactDAO",
   "serve":true,
-  "authenticate": false,
   "serviceScript":"""
     return new foam.dao.EasyDAO.Builder(x)
       .setOf(hughes.journal.Contact.getOwnClassInfo())

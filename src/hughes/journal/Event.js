@@ -383,7 +383,10 @@ categories
       args: 'X x',
       javaThrows: ['AuthorizationException'],
       javaCode: `
-        // nop - anyone can create
+        AuthService auth = (AuthService) x.get("auth");
+        if ( ! auth.check(x, "event.create") ) {
+          throw new AuthorizationException("You do not have permission to create events.");
+        }
       `
     },
     {
@@ -391,18 +394,17 @@ categories
       args: 'X x',
       javaThrows: ['AuthorizationException'],
       javaCode: `
-        if ( this.getAccess() == AccessLevel.PUBLIC ) return;
+        if ( this.getAccess() == AccessLevel.PUBLIC ||
+             this.getAccess() == AccessLevel.PROTECTED )
+          return;
+
         AuthService auth = (AuthService) x.get("auth");
         Subject subject = (Subject) x.get("subject");
         User user = subject.getRealUser();
-        if ( this.getAccess() == AccessLevel.PRIVATE ||
-             ( this.getAccess() == AccessLevel.PROTECTED  &&
-               this.getWho() > 0 ) ) {
-          if ( user.getId() != this.getCreatedBy() &&
-               user.getId() != this.getWho() &&
-               ! auth.check(x, "event.read." + this.getId()) ) {
-            throw new AuthorizationException();
-          }
+        if ( user.getId() != this.getCreatedBy() &&
+             user.getId() != this.getWho() &&
+             ! auth.check(x, "event.read." + this.getId()) ) {
+          throw new AuthorizationException();
         }
       `
     },
@@ -411,13 +413,15 @@ categories
       args: 'X x',
       javaThrows: ['AuthorizationException'],
       javaCode: `
+        if ( this.getAccess() == AccessLevel.PUBLIC ) return;
+
         AuthService auth = (AuthService) x.get("auth");
         Subject subject = (Subject) x.get("subject");
         User user = subject.getRealUser();
         if ( user.getId() != this.getCreatedBy() &&
              user.getId() != this.getWho() &&
              ! auth.check(x, "event.update." + this.getId()) ) {
-          throw new AuthorizationException();
+          throw new AuthorizationException("You do not have permission to update this event.");
         }
       `
     },
@@ -432,7 +436,7 @@ categories
         if ( user.getId() != this.getCreatedBy() &&
              user.getId() != this.getWho() &&
              ! auth.check(x, "event.remove." + this.getId()) ) {
-          throw new AuthorizationException();
+          throw new AuthorizationException("You do not have permission to delete this event.");
         }
       `
     },

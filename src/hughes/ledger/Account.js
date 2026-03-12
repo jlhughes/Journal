@@ -71,6 +71,8 @@ foam.CLASS({
       class: 'Reference',
       of: 'foam.core.auth.User',
       required: true,
+      createVisibility: 'RW',
+      updateVisibility: 'RO',
       view: function(_, X) {
         return {
           class: 'foam.u2.view.RichChoiceView',
@@ -98,11 +100,14 @@ foam.CLASS({
       of: 'hughes.ledger.AccountCode',
       value: 'Cash',
       // TODO: support changing category - this will affect balance
-      // updateVisibility: 'RO',
+      createVisibility: 'RW',
+      updateVisibility: 'RO'
     },
     {
       name: 'number',
-      class: 'String'
+      class: 'String',
+      createVisibility: 'RW',
+      updateVisibility: 'RO'
     },
     {
       class: 'UnitValue',
@@ -134,7 +139,7 @@ foam.CLASS({
       targetDAOKey: 'currencyDAO',
       value: 'CAD',
       createVisibility: 'RW',
-      updateVisibility: 'RW',
+      updateVisibility: 'RO',
       readVisibility: 'HIDDEN'
     },
     {

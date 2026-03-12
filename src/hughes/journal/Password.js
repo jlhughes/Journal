@@ -54,6 +54,18 @@ foam.CLASS({
       name: 'owner',
       class: 'Reference',
       of: 'foam.core.auth.User',
+      view: function(_, X) {
+        return {
+          class: 'foam.u2.view.RichChoiceReferenceView',
+          search: true,
+          sections: [
+            {
+              heading: 'Users',
+              dao: X.userDAO
+            }
+          ]
+        };
+      },
       tableCellFormatter: function(value, obj) {
         var self = this;
         obj.userDAO.find(value).then(function(u) {
@@ -204,6 +216,7 @@ foam.CLASS({
       args: 'X x',
       javaThrows: ['AuthorizationException'],
       javaCode: `
+        if ( this.getAccess() == AccessLevel.PUBLIC ) return;
         AuthService auth = (AuthService) x.get("auth");
         Subject subject = (Subject) x.get("subject");
         User user = subject.getRealUser();
