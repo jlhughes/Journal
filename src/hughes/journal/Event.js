@@ -100,7 +100,8 @@ categories
       class: 'String',
       createVisibility: 'HIDDEN',
       updateVisibility: 'RO',
-      order: 11,
+      readVisibility: 'HIDDEN',
+      order: 100,
       gridColumns: 12
     },
     {
